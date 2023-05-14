@@ -18,7 +18,7 @@ class PermissionSeeder extends Seeder
         $allRoles = Role::all()->keyBy('id');
 
         $permissions = [
-            'properties-manager' => [EnumRole::ROLE_OWNER],
+            'properties-manage' => [EnumRole::ROLE_OWNER],
             'booking-manage' => [EnumRole::ROLE_USER],
         ];
 
