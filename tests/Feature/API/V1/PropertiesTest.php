@@ -3,6 +3,8 @@
 namespace Tests\Feature\API\V1;
 
 use App\Enums\Role;
+use App\Models\City;
+use App\Models\Property;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -10,6 +12,20 @@ use Tests\TestCase;
 class PropertiesTest extends TestCase
 {
     use RefreshDatabase;
+
+    public function test_property_owner_can_add_property()
+    {
+        $owner = User::factory()->create()->assignRole(Role::ROLE_OWNER);
+        $response = $this->actingAs($owner)->postJson('/api/v1/owner/properties', [
+            'name' =>  'Owner property',
+            'city_id' => City::value('id'),
+            'address_street' => 'Street Address 1',
+            'address_postcode' => '12345'
+        ]);
+
+        $response->assertSuccessful();
+        $response->assertJsonFragment(['name' => 'Owner property']);
+    }
 
     public function test_property_owner_has_access_to_properties_feature()
     {

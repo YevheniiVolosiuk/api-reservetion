@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Observers\API\V1\PropertyObserver;
+
 
 class Property extends Model
 {
@@ -22,5 +24,12 @@ class Property extends Model
     public function city()
     {
         return $this->belongsTo(City::class);
+    }
+
+    public static function booted()
+    {
+        parent::booted();
+
+        self::observe(PropertyObserver::class);
     }
 }
