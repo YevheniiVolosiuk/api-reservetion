@@ -10,9 +10,6 @@ class AuthTest extends TestCase
 {
     use RefreshDatabase;
 
-    /**
-     * A basic feature test example.
-     */
     public function test_registration_fails_with_admin_role(): void
     {
         $response = $this->postJson('/api/auth/register', [
