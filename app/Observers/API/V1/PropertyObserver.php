@@ -14,8 +14,8 @@ class PropertyObserver
 
 //        simulate saving data from Google Api because API is not free
         if (is_null($property->lat) && is_null($property->long) && !(app()->environment('testing'))) {
-            $property->lat = fake()->latitude;
-            $property->long = fake()->longitude;
+            $property->lat = fake()->latitude();
+            $property->long = fake()->longitude();
         }
 
 //        if (is_null($property->lat) && is_null($property->long)) {
