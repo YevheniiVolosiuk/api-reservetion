@@ -9,7 +9,7 @@ class BookingController extends Controller
 {
     public function index()
     {
-        $this->authorize('bookings-manage');
+        $this->authorize('booking-manage');
 
         // Will implement booking management later
         return response()->json(['success' => true]);
