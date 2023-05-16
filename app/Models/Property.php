@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Observers\API\V1\PropertyObserver;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 
 class Property extends Model
@@ -21,9 +23,14 @@ class Property extends Model
         'long',
     ];
 
-    public function city()
+    public function city(): belongsTo
     {
         return $this->belongsTo(City::class);
+    }
+
+    public function apartments(): hasMany
+    {
+        return $this->hasMany(Apartment::class);
     }
 
     public static function booted()
