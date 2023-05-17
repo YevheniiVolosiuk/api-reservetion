@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Property;
+use App\Models\Bed;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class PropertySeeder extends Seeder
+class BedSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Property::factory(10)->create();
+        Bed::factory(10)->create();
     }
 }
