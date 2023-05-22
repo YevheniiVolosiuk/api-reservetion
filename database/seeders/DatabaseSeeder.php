@@ -18,15 +18,15 @@ class DatabaseSeeder extends Seeder
             CitySeeder::class,
             GeoobjectSeeder::class,
 
-            ApartmentTypeSeeder::class,
-            PropertySeeder::class,
+//            ApartmentTypeSeeder::class,
+//            PropertySeeder::class,
 
-            ApartmentSeeder::class,
+//            ApartmentSeeder::class,
 
             RoomTypeSeeder::class,
-            RoomSeeder::class,
+//            RoomSeeder::class,
             BedTypeSeeder::class,
-            BedSeeder::class,
+//            BedSeeder::class,
 
         ]);
     }

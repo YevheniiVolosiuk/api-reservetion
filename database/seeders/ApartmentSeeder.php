@@ -10,6 +10,6 @@ class ApartmentSeeder extends Seeder
 {
     public function run(): void
     {
-        Apartment::factory(15)->create();
+        Apartment::factory(1)->create();
     }
 }
